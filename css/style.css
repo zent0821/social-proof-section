@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --Very-Dark-Magenta: hsl(300, 43%, 22%);
+    --Soft-Pink: hsl(333, 80%, 67%);
+    --Dark--Grayish--Magenta: hsl(303, 10%, 53%);
+    --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+}
+
+body{
+    font-size: 15px;
+    font-family: 'Spartan', sans-serif;
+    background: url(../images/bg-pattern-top-desktop.svg) top left -50px, url(../images/bg-pattern-bottom-desktop.svg) bottom right -50px;
+    background-repeat: no-repeat;
+    background-color:var(--White);
+    background-attachment: fixed, fixed;
+}
+
+.main-container{
+    width: 100%;
+    height: 100%;
+}
+
+.main__page{
+    width: 80%;
+    height: 100%;
+    margin: 90px auto;
+}
+
+.header{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header__information{
+    width: 40%;
+}
+
+.header__title{
+    color: var(--Very-Dark-Magenta);
+    font-weight: 700;
+    font-size: 3rem;
+    margin: 0 0 10px;
+}
+
+.header__paragraph{
+    color: var(--Dark--Grayish--Magenta);
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.header__rating{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.header__rating--review, .header__rating--report, .header__rating--bestech{
+    background-color: var(--Light-Grayish-Magenta);
+    width: 80%;
+    padding: 15px 70px 15px 10px;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    align-items: center;
+    justify-items: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: var(--Very-Dark-Magenta);
+    font-weight: 700;
+}
+
+.header__rating--report{
+    grid-template-columns: repeat(9,1fr);
+}
+
+.header__stars{
+    grid-column: 1/4;
+}
+
+.rating__review, .rating__bestech{
+    grid-column: 4/9;
+}
+
+.header__rating--report{
+    padding-right: 0;
+}
+
+.rating__report{
+    grid-column: 4/9;
+}
+
+
+.icon__star{
+    display: inline-block;
+    background-image: url(../images/icon-star.svg);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+}
+
+.header__rating--report{
+    align-self: center;
+}
+
+.header__rating--bestech{
+    align-self: flex-end;
+}
+
+.card{
+    width: 100%;
+    height: 43vh;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card__one, .card__two, .card__three{
+    width: 31%;
+    background-color: var(--Very-Dark-Magenta);
+    border-radius: 10px;
+    padding: 40px 30px;
+}
+
+.card__header{
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+}
+
+.card__header img{
+    width: 100%;
+    border-radius: 50px;
+}
+
+.card__title{
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.title{
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--White);
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.verified{
+    color: var(--Soft-Pink);
+    font-weight: 400;
+}
+
+.card__comments{
+    margin-top: 35px;
+}
+
+.card__paragraph{
+    color: var(--White);
+    text-align: left;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.card__one{
+    align-self: flex-start;
+}
+
+.card__two{
+    align-self: center;
+}
+
+.card__three{
+   align-self: flex-end;
+}
+
+@media screen and (max-width:1100px){
+
+    .header__information{
+        width: 33%;
+    }
+
+    .header__title{
+        font-size: 2.5em;
+    }
+
+    .header__rating{
+        width: 62%;
+    }
+
+    .card{
+        height: 400px;
+    }
+
+    .card__one, .card__two, .card__three{
+        height: 90%;
+    }
+}
+
+@media screen and (max-width:950px){
+    .header__rating{
+        width: 67%;
+    }
+
+    .card{
+        height: 480px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .header{
+        flex-direction: column;
+    }
+
+    .header__rating{
+        margin-top: 20px;
+    }
+
+    .header__information{
+        width: 100%;
+        text-align: center;
+    }
+
+    .header__title{
+        font-size: 2em;
+    }
+
+    .header__paragraph{
+        margin: 15px;
+    }
+
+    .header__rating{
+        width: 100%;
+    }
+
+    .header__rating--review, .header__rating--report, .header__rating--bestech{
+        width: 100%;
+        grid-template-rows: repeat(2,30px);
+        padding:15px 30px;
+    }
+    
+    .header__stars{
+        grid-column: 1/-1;
+        grid-row: 1/2;
+    }
+
+    .rating__review,.rating__bestech, .rating__report{
+        grid-column: 1/-1;
+        grid-row: 2/3;
+    }
+
+    .card{
+        height: 80%;
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .card__one, .card__two, .card__three{
+        width: 100%;
+        margin-top: 20px;
+    }
+   
+}
+
+
